@@ -46,12 +46,12 @@ header("Location:login.php");
     
     
 ?>
-<form action= "create.php" method="post"><input type="text" name="series"></input>
-<input type="text" name="name"></input>
+<form action= "create.php" method="post"><input type="text" name="series" placeholder="nazwa serii"></input>
+<input type="text" name="name" placeholder="nazwa posta"></input>
 
 
-<textarea name="content"></textarea>
-<textarea name="bts"></textarea>
+<textarea name="content" placeholder="treść"></textarea>
+<textarea name="bts" placeholder="za kulisami"></textarea>
 <input type="submit" value="Utwórz"></input>
 
 
@@ -98,7 +98,7 @@ if(isset($_POST["name"]) &&isset($_POST["content"])){
     
       $id = mysqli_query($db,"SELECT id FROM series Where name='".$s_n."';");
       $s = mysqli_fetch_array($id);
-      mkdir($s_n);
+      
 
       }
 
@@ -110,8 +110,9 @@ if(isset($_POST["name"]) &&isset($_POST["content"])){
     $s = mysqli_fetch_array(mysqli_query($db,"SELECT id FROM series Where name='one_shoty';"));
     $s_n= 'one_shoty';
     $series_name = $s_n;
+    
     } 
-   
+   mkdir($s_n);
    //Sprawdza czy seria istnieje, a w przeciwnym wypadku ją tworzy (w bazie danych i folderach).
    
    

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 08 Gru 2023, 07:23
+-- Czas generowania: 08 Gru 2023, 07:29
 -- Wersja serwera: 10.4.27-MariaDB
 -- Wersja PHP: 8.1.12
 
@@ -34,6 +34,14 @@ CREATE TABLE `posts` (
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Zrzut danych tabeli `posts`
+--
+
+INSERT INTO `posts` (`id`, `name`, `series_id`, `user_id`) VALUES
+(2, 'dfdfdb', 1, 1),
+(3, 'd', 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +52,13 @@ CREATE TABLE `series` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `series`
+--
+
+INSERT INTO `series` (`id`, `name`) VALUES
+(1, 'one_shoty');
 
 -- --------------------------------------------------------
 
@@ -56,6 +71,13 @@ CREATE TABLE `users` (
   `login1` varchar(100) NOT NULL,
   `haslo` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Zrzut danych tabeli `users`
+--
+
+INSERT INTO `users` (`id`, `login1`, `haslo`) VALUES
+(1, 'ksuski', 'abc123');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -87,19 +109,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT dla tabeli `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `series`
 --
 ALTER TABLE `series`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

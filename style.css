@@ -1,5 +1,5 @@
 .articles{
-    background: radial-gradient(darkblue 90%,lightgreen);
+    background: radial-gradient(darkgreen 90%,lightgreen);
     
     align-self: center;
     display:grid;
@@ -47,7 +47,7 @@ body:visited{
     color:violet;
 }
 .art{
-    color: green;
+    color: blue;
     text-shadow: 0 0 10px red;
     grid-column-start: 1;
     grid-column-end: 4;
